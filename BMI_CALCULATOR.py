@@ -25,12 +25,12 @@ def open_metric_calc():
     win = tk.Toplevel(root)
     win.title("Metric BMI")
     win.geometry("300x350")
-    win.configure(bg="#f8f9fa")
+    win.configure(bg="#f8f9fa",)
 
-    tk.Label(win, text="Weight (kg):", bg="#f8f9fa").pack(pady=5)
+    tk.Label(win, text="Weight (kg):",font=("Arial", 13, "bold"), bg="#f8f9fa").pack(pady=5)
     e_w = tk.Entry(win)
     e_w.pack()
-    tk.Label(win, text="Height (m):", bg="#f8f9fa").pack(pady=5)
+    tk.Label(win, text="Height (m):",font=("Arial", 13, "bold"), bg="#f8f9fa").pack(pady=5)
     e_h = tk.Entry(win)
     e_h.pack()
 
@@ -43,26 +43,26 @@ def open_metric_calc():
         except:
             messagebox.showerror("Error", "Invalid Input")
 
-    tk.Button(win, text="Calculate", command=calc, bg="#4CAF50", fg="white", width=15).pack(pady=5)
-    tk.Button(win, text="Reset", command=lambda: [e_w.delete(0, tk.END), e_h.delete(0, tk.END)], bg="#f44336",
-              fg="white", width=15).pack(pady=5)
-    tk.Button(win, text="Close", command=win.destroy, bg="#555555", fg="white", width=15).pack(pady=5)
+    tk.Button(win, text="Calculate",font=("Arial", 10, "bold"), command=calc, bg="#4CAF50", fg="white", width=15).pack(pady=5)
+    tk.Button(win, text="Reset", font=("Arial", 10, "bold"),command=lambda: [e_w.delete(0, tk.END), e_f.delete(0, tk.END), e_i.delete(0, tk.END)],
+              bg="white", fg="black", width=15).pack(pady=5)
+    tk.Button(win, text="Close",font=("Arial", 10, "bold"), command=win.destroy, bg="white", fg="Red", width=15).pack(pady=5)
 
 
 # --- Imperial Calculator ---
 def open_imperial_calc():
     win = tk.Toplevel(root)
     win.title("Imperial BMI")
-    win.geometry("300x400")
+    win.geometry("500x500")
     win.configure(bg="#f8f9fa")
 
-    tk.Label(win, text="Weight (kg):", bg="#f8f9fa").pack(pady=5)
+    tk.Label(win, text="Weight (kg):",font=("Arial", 13, "bold"), bg="#f8f9fa").pack(pady=5)
     e_w = tk.Entry(win)
     e_w.pack()
-    tk.Label(win, text="Feet:", bg="#f8f9fa").pack(pady=5)
+    tk.Label(win, text="Feet:",font=("Arial", 13, "bold"), bg="#f8f9fa").pack(pady=5)
     e_f = tk.Entry(win)
     e_f.pack()
-    tk.Label(win, text="Inches:", bg="#f8f9fa").pack(pady=5)
+    tk.Label(win, text="Inches:",font=("Arial", 13, "bold"), bg="#f8f9fa").pack(pady=5)
     e_i = tk.Entry(win)
     e_i.pack()
 
@@ -76,10 +76,10 @@ def open_imperial_calc():
         except:
             messagebox.showerror("Error", "Invalid Input")
 
-    tk.Button(win, text="Calculate", command=calc, bg="#4CAF50", fg="white", width=15).pack(pady=5)
-    tk.Button(win, text="Reset", command=lambda: [e_w.delete(0, tk.END), e_f.delete(0, tk.END), e_i.delete(0, tk.END)],
-              bg="#f44336", fg="white", width=15).pack(pady=5)
-    tk.Button(win, text="Close", command=win.destroy, bg="#555555", fg="white", width=15).pack(pady=5)
+    tk.Button(win, text="Calculate",font=("Arial", 10, "bold"), command=calc, bg="#4CAF50", fg="white", width=15).pack(pady=5)
+    tk.Button(win, text="Reset",font=("Arial", 10, "bold"), command=lambda: [e_w.delete(0, tk.END), e_f.delete(0, tk.END), e_i.delete(0, tk.END)],
+              bg="white", fg="black", width=15).pack(pady=5)
+    tk.Button(win, text="Close",font=("Arial", 10, "bold"), command=win.destroy, bg="white", fg="Red", width=15).pack(pady=5)
 
 
 # --- Main Menu ---
@@ -89,8 +89,8 @@ root.geometry("300x250")
 root.configure(bg="#f0f0f0")
 
 tk.Label(root, text="Select Calculator", font=("Arial", 14, "bold"), bg="#f0f0f0").pack(pady=20)
-tk.Button(root, text="Metric (kg/m)", command=open_metric_calc, width=20, bg="#2196F3", fg="white").pack(pady=5)
-tk.Button(root, text="Imperial (ft/in)", command=open_imperial_calc, width=20, bg="#2196F3", fg="white").pack(pady=5)
-tk.Button(root, text="Exit", command=root.destroy, width=20, bg="black", fg="white").pack(pady=20)
+tk.Button(root, text="Metric (kg/m)",font=("Arial", 13, "bold"), command=open_metric_calc, width=20, bg="#2196F3", fg="white").pack(pady=5)
+tk.Button(root, text="Imperial (ft/in)",font=("Arial", 13, "bold"), command=open_imperial_calc, width=20, bg="#2196F3", fg="white").pack(pady=5)
+tk.Button(root, text="Exit",font=("Arial", 10, "bold"), command=root.destroy, width=20, bg="white", fg="red").pack(pady=20)
 
 root.mainloop()
